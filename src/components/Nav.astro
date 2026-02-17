@@ -1,0 +1,47 @@
+---
+// To add a new page to the nav, just add an entry to this array.
+const navLinks = [
+  { href: '/',         label: 'Home'    },
+  { href: '/purpose',  label: 'Purpose' },
+  { href: '/teams',    label: 'Teams'   },
+  { href: '/join',     label: 'Join'    },
+  { href: '/contact',  label: 'Contact' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<nav id="navbar">
+  <div class="container nav-inner">
+    <a href="/" class="nav-logo">
+      <!--
+        REPLACE: swap logo-light.svg / logo-dark.svg with your actual logo files.
+        logo-light = white version (over dark hero)
+        logo-dark  = dark version (when navbar scrolls over light background)
+      -->
+      <img
+        id="nav-logo-img"
+        src="/assets/images/logo-light.svg"
+        data-light-src="/assets/images/logo-light.svg"
+        data-dark-src="/assets/images/logo-dark.svg"
+        alt="Project Atlas"
+      />
+    </a>
+
+    <ul class="nav-links">
+      {navLinks.map(({ href, label }) => (
+        <li>
+          <a href={href} class={currentPath === href ? 'active' : ''}>
+            {label}
+          </a>
+        </li>
+      ))}
+    </ul>
+
+    <a href="/join" class="nav-cta">Join Now</a>
+
+    <button class="nav-hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>

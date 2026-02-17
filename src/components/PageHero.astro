@@ -1,0 +1,119 @@
+---
+interface Props {
+  badge?: string;
+  badgeColor?: 'crimson' | 'green' | 'navy'; // defaults to crimson
+  title: string;
+  subtitle?: string;
+  layout?: 'center' | 'split'; // center = centered text, split = text left + big number right
+  bigNumber?: string;          // only used when layout='split'
+  bigNumberLabel?: string;
+}
+
+const {
+  badge,
+  badgeColor = 'crimson',
+  title,
+  subtitle,
+  layout = 'center',
+  bigNumber,
+  bigNumberLabel,
+} = Astro.props;
+---
+
+<section class="page-hero">
+  <!-- Grid texture overlay -->
+  <div class="page-hero-grid" aria-hidden="true"></div>
+
+  <div class="container" style="position:relative; z-index:1;">
+    {layout === 'center' ? (
+      <div class="text-center">
+        {badge && (
+          <div class={`badge badge-${badgeColor} reveal`} style="margin: 0 auto 24px; display: inline-flex;">
+            <span class="badge-dot"></span> {badge}
+          </div>
+        )}
+        <h1 class="page-hero-title reveal" style="transition-delay:0.1s;" set:html={title} />
+        {subtitle && (
+          <p class="section-sub reveal" style="margin:0 auto; transition-delay:0.2s;">
+            {subtitle}
+          </p>
+        )}
+      </div>
+    ) : (
+      <div class="page-hero-split">
+        <div>
+          {badge && (
+            <div class={`badge badge-${badgeColor} reveal`} style="margin-bottom:24px;">
+              <span class="badge-dot"></span> {badge}
+            </div>
+          )}
+          <h1 class="page-hero-title reveal" style="transition-delay:0.1s;" set:html={title} />
+          {subtitle && (
+            <p class="section-sub reveal" style="transition-delay:0.2s;">{subtitle}</p>
+          )}
+        </div>
+        {bigNumber && (
+          <div class="reveal-right page-hero-bignumber" style="transition-delay:0.2s;">
+            <div class="bignumber-value">{bigNumber}</div>
+            {bigNumberLabel && <div class="bignumber-label">{bigNumberLabel}</div>}
+          </div>
+        )}
+      </div>
+    )}
+  </div>
+</section>
+
+<style>
+  .page-hero-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 48px 48px;
+    pointer-events: none;
+  }
+
+  .page-hero-title {
+    font-size: clamp(2rem, 5.5vw, 4rem);
+    color: #fff;
+    max-width: 580px;
+    margin: 0 auto 20px;
+  }
+
+  .page-hero-split {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+
+  .page-hero-split .page-hero-title {
+    margin: 0 0 16px;
+    max-width: none;
+  }
+
+  .page-hero-bignumber {
+    text-align: right;
+  }
+
+  .bignumber-value {
+    font-family: var(--font-display);
+    font-size: 5.5rem;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255,255,255,0.1);
+  }
+
+  .bignumber-label {
+    font-family: var(--font-display);
+    font-size: 0.52rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(238,241,247,0.25);
+    margin-top: 4px;
+  }
+</style>

@@ -1,0 +1,151 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import TeamCard from '../components/TeamCard.astro';
+import { site } from '../data/site.js';
+import { teams } from '../data/teams.js';
+---
+
+<Layout
+  title="Teams"
+  description="Project Atlas — Meet the six engineering teams under the Atlas coalition."
+>
+
+  <PageHero
+    badge="The Coalition"
+    badgeColor="green"
+    title="Six Teams.<br/>One Atlas."
+    subtitle={`Each team competes at the highest level in its discipline. Together, they form the most powerful STEM coalition in the ${site.districtShort}.`}
+    layout="split"
+    bigNumber="06"
+    bigNumberLabel="Disciplines"
+  />
+
+
+  <!-- ─── STATS STRIP ──────────────────────────────────────────── -->
+  <section style="padding:0; background:var(--bg);">
+    <div class="container">
+      <div class="stats-strip">
+        <div class="strip-cell">
+          <div class="strip-label">Teams</div>
+          <div class="strip-value" style="color:var(--navy);">
+            <span class="counter" data-target="6">0</span>
+          </div>
+        </div>
+        <div class="strip-cell">
+          <div class="strip-label">Disciplines</div>
+          <div class="strip-value" style="color:var(--green);">
+            <span class="counter" data-target="6">0</span>
+          </div>
+        </div>
+        <div class="strip-cell">
+          <!-- REPLACE: actual founded year lives in src/data/site.js -->
+          <div class="strip-label">Founded</div>
+          <div class="strip-value strip-value-md" style="color:var(--crimson);">
+            {site.foundedYear}
+          </div>
+        </div>
+        <div class="strip-cell" style="border-right:none;">
+          <div class="strip-label">District</div>
+          <div class="strip-value strip-value-sm" style="color:var(--navy);">
+            {site.districtShort}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ─── TEAM CARDS ───────────────────────────────────────────── -->
+  <!-- REPLACE: all team content lives in src/data/teams.js -->
+  <section class="section" style="background:var(--bg-2);">
+    <div class="container">
+      <div class="stagger teams-grid">
+        {teams.map((team) => (
+          <TeamCard {...team} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+
+  <!-- ─── JOIN CTA ─────────────────────────────────────────────── -->
+  <section class="section" style="padding:80px 0;">
+    <div class="container">
+      <div class="join-cta">
+        <div class="reveal-left">
+          <h2 class="section-title" style="margin-bottom:10px;">Want to Join a Team?</h2>
+          <p class="section-sub">
+            Whether you're a seasoned programmer or picking up a soldering iron
+            for the first time — there's a place for you in Atlas.
+          </p>
+        </div>
+        <div class="reveal-right join-buttons" style="transition-delay:0.1s;">
+          <a href="/join"    class="btn btn-primary">Express Interest</a>
+          <a href="/contact" class="btn btn-outline">Ask a Question</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+
+<style>
+  .stats-strip {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border: 1px solid var(--border);
+    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    margin-top: -1px;
+  }
+
+  .strip-cell {
+    padding: 24px;
+    text-align: center;
+    background: var(--bg-card);
+    border-right: 1px solid var(--border);
+  }
+
+  .strip-label {
+    font-family: var(--font-display);
+    font-size: 0.52rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 6px;
+  }
+
+  .strip-value {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 800;
+  }
+  .strip-value-md { font-size: 1.4rem; }
+  .strip-value-sm { font-size: 1rem; }
+
+  .teams-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+  }
+
+  .join-cta {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+
+  .join-buttons {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+  }
+</style>

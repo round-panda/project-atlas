@@ -1,0 +1,50 @@
+---
+import { site } from '../data/site.js';
+
+const year = new Date().getFullYear();
+---
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+        <!-- REPLACE: swap with your actual light/white logo -->
+        <img loading="lazy" src="/assets/images/logo-light.svg" alt="Project Atlas" style="height:30px; opacity:0.7;" />
+        <p>
+          Uniting six engineering teams under one voice for student board
+          representation in the {site.district}.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <a href="/">Home</a>
+        <a href="/purpose">Purpose</a>
+        <a href="/teams">Teams</a>
+        <a href="/join">Join</a>
+        <a href="/contact">Contact</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Organization</h4>
+        <a href={site.links.boardMeetings}>Board Meetings</a>
+        <a href={site.links.news}>News &amp; Updates</a>
+        <a href={site.links.bylaws}>Bylaws</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>District</h4>
+        <a href={site.links.tcusdWebsite} target="_blank">{site.districtShort} Website</a>
+        <a href={site.links.enrollment} target="_blank">Enrollment</a>
+        <a href={site.links.calendars} target="_blank">Calendars</a>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; {year} {site.name} &mdash; {site.location}.</p>
+      <span class="footer-district">{site.district}</span>
+    </div>
+  </div>
+</footer>
