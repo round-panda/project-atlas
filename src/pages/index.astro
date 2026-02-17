@@ -27,10 +27,6 @@ const typewriterPhrases = [
     <div class="geo-ring hero-ring-2" aria-hidden="true"></div>
     <div class="geo-ring hero-ring-3" aria-hidden="true"></div>
 
-    <!-- Vertical guide lines -->
-    <div class="hero-rule hero-rule-left"  aria-hidden="true"></div>
-    <div class="hero-rule hero-rule-right" aria-hidden="true"></div>
-
     <div class="container hero-grid">
 
       <!-- Left column: copy -->
@@ -271,16 +267,6 @@ const typewriterPhrases = [
   .hero-ring-2 { width:400px; height:400px; top:50%; right:-60px; transform:translateY(-50%); border-color:rgba(160,24,48,0.15); }
   .hero-ring-3 { width:200px; height:200px; top:50%; right:80px; transform:translateY(-50%); border-color:rgba(45,90,69,0.2); }
 
-  .hero-rule {
-    position: absolute;
-    top: 0; bottom: 0;
-    width: 1px;
-    background: rgba(255,255,255,0.05);
-    pointer-events: none;
-  }
-  .hero-rule-left  { left: calc((100% - 1140px) / 2 + 32px); }
-  .hero-rule-right { right: calc((100% - 1140px) / 2 + 32px); }
-
   .hero-grid {
     padding-top: 60px;
     padding-bottom: 100px;
@@ -290,19 +276,16 @@ const typewriterPhrases = [
     gap: 60px;
   }
 
-  .hero-copy { max-width: 640px; }
+  .hero-copy { max-width: none; }
 
   .hero-headline {
     font-family: var(--font-display);
-    font-size: clamp(2.6rem, 6.5vw, 5.4rem);
+    font-size: clamp(2.6rem, 8vw, 5rem);
     font-weight: 800;
     line-height: 1.0;
     letter-spacing: -0.03em;
     color: #fff;
     margin-bottom: 24px;
-    overflow-wrap: break-word;
-    word-break: break-word;
-    hyphens: auto;
   }
   .hero-headline-muted  { color: rgba(238,241,247,0.35); }
   .hero-headline-accent { color: var(--crimson); }
@@ -571,7 +554,6 @@ const typewriterPhrases = [
     .hero-headline { font-size: clamp(1.75rem, 9.8vw, 3.2rem); margin-bottom: 18px; }
     .hero-sub { font-size: 1rem; }
     .hero-scroll-cue { display: none; }
-    .hero-rule { display: none; }
     .stats-grid { grid-template-columns: repeat(2, 1fr); }
     .stat-cell { padding: 24px 16px; }
     .stat-value { font-size: 2.2rem; }

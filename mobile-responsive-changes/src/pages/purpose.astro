@@ -1,0 +1,228 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import CtaBanner from '../components/CtaBanner.astro';
+import { site } from '../data/site.js';
+import { url } from '../utils/url.js';
+
+// ─── EDIT YOUR CONTENT HERE ───────────────────────────────────────────────────
+
+const mission =
+  'To unite engineering students under a single, empowered organization that advocates for their needs, amplifies their voices, and earns meaningful representation on the TCUSD Board of Education.'; // REPLACE
+
+const vision =
+  'A Temple City school district where every engineering student has the resources, recognition, and representation to reach their full potential — and where STEM excellence attracts the best families to our community.'; // REPLACE
+
+const values = [
+  {
+    title: 'Unity',
+    icon: `<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>`,
+    iconColor: 'default',
+    description: 'Six distinct teams, one shared purpose. Collective advocacy is exponentially more powerful than individual effort.',
+  },
+  {
+    title: 'Excellence',
+    icon: `<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>`,
+    iconColor: 'crimson',
+    description: 'We hold ourselves to the same standards we apply to our engineering projects — rigorous, iterative, always improving.',
+  },
+  {
+    title: 'Advocacy',
+    icon: `<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>`,
+    iconColor: 'green',
+    description: 'Students deserve a voice in decisions that shape their education. We show up, speak up, and follow through.',
+  },
+  {
+    title: 'Inclusion',
+    icon: `<circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>`,
+    iconColor: 'default',
+    description: 'Atlas opens its doors to every student regardless of experience. Engineering is a mindset, not a prerequisite.',
+  },
+  {
+    title: 'Innovation',
+    icon: `<polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>`,
+    iconColor: 'crimson',
+    description: 'We prototype for tomorrow — in our competitions, our advocacy, and our community outreach.',
+  },
+  {
+    title: 'Community',
+    icon: `<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>`,
+    iconColor: 'green',
+    description: 'Proud ambassadors of Temple City — attracting families who value STEM and building bonds that outlive high school.',
+  },
+];
+
+// REPLACE: write the real founding story in paragraphs below
+const story = [
+  `In 2026, students from across Temple City's engineering programs recognized a common challenge: [NEED TO FILL IN]. The solution was Atlas — a unified body that preserves each team's identity while giving them collective leverage.`,
+  `Despite being named after the Titan who held up the world, ATLAS is also an acronym for (A)cademic Competition (T)eams: (L)and, (A)ir, (S)pace. Project Atlas carries the weight of student ambition — turning competition season trophies into real-world change for the ${site.districtShort} community.`,
+  `[Continue founding story here. Mention key founders, the first meeting, early challenges, vision.]`,
+];
+
+// ─────────────────────────────────────────────────────────────────────────────
+---
+
+<Layout
+  title="Purpose"
+  description="Project Atlas — Our Purpose, Mission, Vision, and Core Values."
+>
+
+  <PageHero
+    badge="Who We Are"
+    title="Our Purpose"
+    subtitle="Atlas was built on the belief that students who build robots, code software, and design systems deserve a seat at the table where decisions are made."
+  />
+
+
+  <!-- ─── MISSION + VISION ─────────────────────────────────────── -->
+  <section class="section">
+    <div class="container">
+      <div class="mv-grid">
+
+        <div class="card top-border-navy reveal-left mv-card mv-card-dark">
+          <div class="section-label mv-label-light">
+            <span class="mv-label-line"></span> Mission
+          </div>
+          <p class="mv-statement mv-statement-light">{mission}</p>
+        </div>
+
+        <div class="card top-border-crimson reveal-right mv-card">
+          <div class="section-label" style="margin-bottom:16px;">Vision</div>
+          <p class="mv-statement">{vision}</p>
+        </div>
+
+      </div>
+
+
+      <!-- Values -->
+      <div class="reveal text-center" style="margin-bottom:52px; margin-top:72px;">
+        <div class="section-label" style="justify-content:center;">Core Values</div>
+        <h2 class="section-title">What Drives Us</h2>
+      </div>
+
+      <div class="stagger values-grid">
+        {values.map(({ title, icon, iconColor, description }) => (
+          <div class="card">
+            <div class={`icon-box ${iconColor !== 'default' ? `icon-box-${iconColor}` : ''}`}>
+              <svg viewBox="0 0 24 24" set:html={icon} />
+            </div>
+            <h3 class="value-title">{title}</h3>
+            <p class="value-desc">{description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+
+  <!-- ─── FOUNDING STORY ───────────────────────────────────────── -->
+  <section class="section" style="background:var(--bg-2);">
+    <div class="container">
+      <div class="story-grid">
+
+        <div class="reveal-left">
+          <div class="section-label">Our Story</div>
+          <h2 class="section-title">How Atlas<br/>Came to Be</h2>
+          <a href={url('/join')} class="btn btn-primary" style="margin-top:8px;">Join Us &rarr;</a>
+        </div>
+
+        <div class="reveal-right">
+          {story.map((paragraph) => (
+            <p class="story-para">{paragraph}</p>
+          ))}
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+
+  <!-- ─── CTA ──────────────────────────────────────────────────── -->
+  <CtaBanner
+    title="Believe in What We Stand For?"
+    subtitle="Join the coalition and help us write the next chapter of TCUSD engineering history."
+    primaryHref={url('/join')}
+    primaryLabel="Join Atlas"
+    secondaryHref={url('/teams')}
+    secondaryLabel="Meet the Teams"
+  />
+
+</Layout>
+
+
+<style>
+  .mv-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 0;
+  }
+
+  .mv-card { padding: 32px; }
+  .mv-card-dark { background: var(--navy); border-color: transparent; }
+
+  .mv-label-light { color: rgba(123,150,196,0.8); margin-bottom: 16px; }
+  .mv-label-line {
+    background: rgba(123,150,196,0.6);
+    display: inline-block;
+    width: 22px;
+    height: 1.5px;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+
+  .mv-statement {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+  .mv-statement-light { color: #fff; }
+
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .value-title {
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    margin-bottom: 10px;
+  }
+  .value-desc { color: var(--text-muted); font-size: 0.88rem; line-height: 1.7; }
+
+  .story-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .story-para {
+    font-size: 1rem;
+    color: var(--text-muted);
+    line-height: 1.82;
+    margin-bottom: 24px;
+  }
+  .story-para:first-child { font-size: 1.08rem; }
+
+  /* ── Responsive ── */
+  @media (max-width: 900px) {
+    .mv-grid { grid-template-columns: 1fr; }
+    .values-grid { grid-template-columns: repeat(2, 1fr); }
+    .story-grid { grid-template-columns: 1fr; gap: 40px; }
+  }
+
+  @media (max-width: 600px) {
+    .values-grid { grid-template-columns: 1fr; }
+  }
+</style>

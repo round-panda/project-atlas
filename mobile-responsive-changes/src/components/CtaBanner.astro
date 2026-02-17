@@ -1,0 +1,95 @@
+---
+interface Props {
+  badge?: string;
+  title: string;
+  subtitle?: string;
+  primaryHref: string;
+  primaryLabel: string;
+  secondaryHref?: string;
+  secondaryLabel?: string;
+}
+
+const {
+  badge,
+  title,
+  subtitle,
+  primaryHref,
+  primaryLabel,
+  secondaryHref,
+  secondaryLabel,
+} = Astro.props;
+---
+
+<section class="cta-banner">
+  <!-- Decorative rings -->
+  <div class="cta-ring cta-ring-tr" aria-hidden="true"></div>
+  <div class="cta-ring cta-ring-bl" aria-hidden="true"></div>
+
+  <div class="container text-center" style="position:relative; z-index:1;">
+    {badge && (
+      <div class="badge badge-crimson reveal" style="margin: 0 auto 28px;">
+        <span class="badge-dot"></span> {badge}
+      </div>
+    )}
+    <h2 class="cta-title reveal" style="transition-delay:0.1s;">{title}</h2>
+    {subtitle && (
+      <p class="cta-subtitle reveal" style="transition-delay:0.2s;">{subtitle}</p>
+    )}
+    <div class="reveal" style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap; transition-delay:0.3s;">
+      <a href={primaryHref} class="btn btn-crimson">{primaryLabel}</a>
+      {secondaryHref && secondaryLabel && (
+        <a href={secondaryHref} class="btn btn-outline-light">{secondaryLabel}</a>
+      )}
+    </div>
+  </div>
+</section>
+
+<style>
+  .cta-banner {
+    background: var(--navy);
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-ring {
+    position: absolute;
+    border: 1px solid rgba(255,255,255,0.04);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .cta-ring-tr {
+    width: 500px; height: 500px;
+    top: -100px; right: -100px;
+  }
+
+  .cta-ring-bl {
+    width: 360px; height: 360px;
+    bottom: -80px; left: -80px;
+  }
+
+  .cta-title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4.5vw, 3.4rem);
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    color: #fff;
+    max-width: 600px;
+    margin: 0 auto 20px;
+    line-height: 1.1;
+  }
+
+  .cta-subtitle {
+    color: rgba(238,241,247,0.58);
+    font-size: 1.05rem;
+    max-width: 500px;
+    margin: 0 auto 44px;
+    line-height: 1.78;
+  }
+
+  @media (max-width: 700px) {
+    .cta-banner { padding: 72px 0; }
+    .cta-subtitle { margin-bottom: 32px; }
+  }
+</style>
