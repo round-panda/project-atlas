@@ -10,9 +10,9 @@ maintainability. The site builds to static HTML/CSS/JS.
 
 TECH STACK
 ----------
-  - Astro (static site generator, zero-JS by default)
+  - Astro
   - HTML5 + Vanilla JS (scroll reveal, typewriter, counters)
-  - CSS3 (unchanged from original — CSS variables, Grid, Flexbox)
+  - CSS3
   - Google Fonts via CDN (Syne + Epilogue)
   - No runtime JavaScript frameworks
 
@@ -60,11 +60,9 @@ HOW TO RUN LOCALLY
 
   2. Start development server:
        npm run dev
-       → Open http://localhost:4321
 
   3. Build for production:
        npm run build
-       → Output appears in dist/
 
   4. Preview the production build locally:
        npm run preview
