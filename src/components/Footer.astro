@@ -1,5 +1,6 @@
 ---
 import { site } from '../data/site.js';
+import { url } from '../utils/url.js';
 
 const year = new Date().getFullYear();
 ---
@@ -10,7 +11,7 @@ const year = new Date().getFullYear();
 
       <div class="footer-brand">
         <!-- REPLACE: swap with your actual light/white logo -->
-        <img loading="lazy" src="/assets/images/logo-light.svg" alt="Project Atlas" style="height:30px; opacity:0.7;" />
+        <img loading="lazy" src={url('/assets/images/logo-light.svg')} alt="Project Atlas" style="height:30px; opacity:0.7;" />
         <p>
           Uniting six engineering teams under one voice for student board
           representation in the {site.district}.
@@ -19,11 +20,11 @@ const year = new Date().getFullYear();
 
       <div class="footer-col">
         <h4>Navigate</h4>
-        <a href="/">Home</a>
-        <a href="/purpose">Purpose</a>
-        <a href="/teams">Teams</a>
-        <a href="/join">Join</a>
-        <a href="/contact">Contact</a>
+        <a href={url('/')}>Home</a>
+        <a href={url('/purpose')}>Purpose</a>
+        <a href={url('/teams')}>Teams</a>
+        <a href={url('/join')}>Join</a>
+        <a href={url('/contact')}>Contact</a>
       </div>
 
       <div class="footer-col">

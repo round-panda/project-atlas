@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import PageHero from '../components/PageHero.astro';
 import TeamCard from '../components/TeamCard.astro';
 import { site } from '../data/site.js';
+import { url } from '../utils/url.js';
 import { teams } from '../data/teams.js';
 ---
 
@@ -83,8 +84,8 @@ import { teams } from '../data/teams.js';
           </p>
         </div>
         <div class="reveal-right join-buttons" style="transition-delay:0.1s;">
-          <a href="/join"    class="btn btn-primary">Express Interest</a>
-          <a href="/contact" class="btn btn-outline">Ask a Question</a>
+          <a href={url('/join')}    class="btn btn-primary">Express Interest</a>
+          <a href={url('/contact')} class="btn btn-outline">Ask a Question</a>
         </div>
       </div>
     </div>

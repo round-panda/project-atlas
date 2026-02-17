@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import PageHero from '../components/PageHero.astro';
 import CtaBanner from '../components/CtaBanner.astro';
 import { site } from '../data/site.js';
+import { url } from '../utils/url.js';
 
 // ─── EDIT YOUR CONTENT HERE ───────────────────────────────────────────────────
 
@@ -124,7 +125,7 @@ const story = [
         <div class="reveal-left">
           <div class="section-label">Our Story</div>
           <h2 class="section-title">How Atlas<br/>Came to Be</h2>
-          <a href="/join" class="btn btn-primary" style="margin-top:8px;">Join Us &rarr;</a>
+          <a href={url('/join')} class="btn btn-primary" style="margin-top:8px;">Join Us &rarr;</a>
         </div>
 
         <div class="reveal-right">
@@ -144,9 +145,9 @@ const story = [
   <CtaBanner
     title="Believe in What We Stand For?"
     subtitle="Join the coalition and help us write the next chapter of TCUSD engineering history."
-    primaryHref="/join"
+    primaryHref={url('/join')}
     primaryLabel="Join Atlas"
-    secondaryHref="/teams"
+    secondaryHref={url('/teams')}
     secondaryLabel="Meet the Teams"
   />
 

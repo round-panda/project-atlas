@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import CtaBanner from '../components/CtaBanner.astro';
 import { site } from '../data/site.js';
 import { teams } from '../data/teams.js';
+import { url } from '../utils/url.js';
 
 // Typewriter phrases — update to match your actual team disciplines
 const typewriterPhrases = [
@@ -63,8 +64,8 @@ const typewriterPhrases = [
         </div>
 
         <div class="reveal" style="display:flex; gap:14px; flex-wrap:wrap; transition-delay:0.36s;">
-          <a href="/purpose" class="btn btn-crimson">Our Mission</a>
-          <a href="/join"    class="btn btn-outline-light">Join Atlas</a>
+          <a href={url('/purpose')} class="btn btn-crimson">Our Mission</a>
+          <a href={url('/join')}    class="btn btn-outline-light">Join Atlas</a>
         </div>
 
         <!-- Scroll cue -->
@@ -175,7 +176,7 @@ const typewriterPhrases = [
           </div>
 
           <div style="margin-top:32px;">
-            <a href="/purpose" class="btn btn-outline">Read Our Purpose &rarr;</a>
+            <a href={url('/purpose')} class="btn btn-outline">Read Our Purpose &rarr;</a>
           </div>
         </div>
 
@@ -186,7 +187,7 @@ const typewriterPhrases = [
             <div class="corner-mark br"></div>
             <!--
               REPLACE: swap this placeholder with a real team photo:
-              <img src="/assets/images/team-photo.jpg" alt="Project Atlas team" />
+              <img src={url('/assets/images/team-photo.jpg')} alt="Project Atlas team" />
             -->
             <div class="photo-placeholder">
               <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(238,241,247,0.2)" stroke-width="1">
@@ -216,7 +217,7 @@ const typewriterPhrases = [
           <div class="section-label">The Six Teams</div>
           <h2 class="section-title" style="margin-bottom:0;">Engineering Disciplines United</h2>
         </div>
-        <a href="/teams" class="btn btn-outline reveal" style="flex-shrink:0; transition-delay:0.1s;">
+        <a href={url('/teams')} class="btn btn-outline reveal" style="flex-shrink:0; transition-delay:0.1s;">
           View All Teams &rarr;
         </a>
       </div>
@@ -245,9 +246,9 @@ const typewriterPhrases = [
     badge="Open to All Students"
     title="Ready to Shape Your District's Future?"
     subtitle="Whether you're a student engineer, a prospective family, or someone who believes in student advocacy — Project Atlas has a place for you."
-    primaryHref="/join"
+    primaryHref={url('/join')}
     primaryLabel="Get Involved"
-    secondaryHref="/contact"
+    secondaryHref={url('/contact')}
     secondaryLabel="Contact Us"
   />
 

@@ -1,4 +1,6 @@
 ---
+import { url } from '../utils/url.js';
+
 // To add a new page to the nav, just add an entry to this array.
 const navLinks = [
   { href: '/',         label: 'Home'    },
@@ -13,7 +15,7 @@ const currentPath = Astro.url.pathname;
 
 <nav id="navbar">
   <div class="container nav-inner">
-    <a href="/" class="nav-logo">
+    <a href={url('/')} class="nav-logo">
       <!--
         REPLACE: swap logo-light.svg / logo-dark.svg with your actual logo files.
         logo-light = white version (over dark hero)
@@ -21,9 +23,9 @@ const currentPath = Astro.url.pathname;
       -->
       <img
         id="nav-logo-img"
-        src="/assets/images/logo-light.svg"
-        data-light-src="/assets/images/logo-light.svg"
-        data-dark-src="/assets/images/logo-dark.svg"
+        src={url('/assets/images/logo-light.svg')}
+        data-light-src={url('/assets/images/logo-light.svg')}
+        data-dark-src={url('/assets/images/logo-dark.svg')}
         alt="Project Atlas"
       />
     </a>
@@ -31,14 +33,14 @@ const currentPath = Astro.url.pathname;
     <ul class="nav-links">
       {navLinks.map(({ href, label }) => (
         <li>
-          <a href={href} class={currentPath === href ? 'active' : ''}>
+          <a href={url(href)} class={currentPath === url(href) ? 'active' : ''}>
             {label}
           </a>
         </li>
       ))}
     </ul>
 
-    <a href="/join" class="nav-cta">Join Now</a>
+    <a href={url('/join')} class="nav-cta">Join Now</a>
 
     <button class="nav-hamburger" aria-label="Toggle menu">
       <span></span><span></span><span></span>
