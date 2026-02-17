@@ -290,16 +290,19 @@ const typewriterPhrases = [
     gap: 60px;
   }
 
-  .hero-copy { max-width: none; }
+  .hero-copy { max-width: 640px; }
 
   .hero-headline {
     font-family: var(--font-display);
-    font-size: clamp(2.6rem, 9vw, 8rem);
+    font-size: clamp(2.6rem, 6.5vw, 5.4rem);
     font-weight: 800;
     line-height: 1.0;
     letter-spacing: -0.03em;
     color: #fff;
     margin-bottom: 24px;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
   }
   .hero-headline-muted  { color: rgba(238,241,247,0.35); }
   .hero-headline-accent { color: var(--crimson); }
@@ -565,7 +568,7 @@ const typewriterPhrases = [
       padding-bottom: 60px;
       gap: 32px;
     }
-    .hero-headline { font-size: clamp(1.75rem, 7.5vw, 3rem); margin-bottom: 18px; }
+    .hero-headline { font-size: clamp(2rem, 10vw, 3.2rem); margin-bottom: 18px; }
     .hero-sub { font-size: 1rem; }
     .hero-scroll-cue { display: none; }
     .hero-rule { display: none; }
