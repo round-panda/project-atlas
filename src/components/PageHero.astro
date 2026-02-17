@@ -116,4 +116,16 @@ const {
     color: rgba(238,241,247,0.25);
     margin-top: 4px;
   }
+
+  @media (max-width: 640px) {
+    .page-hero-split {
+      grid-template-columns: 1fr;
+    }
+    .page-hero-bignumber {
+      display: none;
+    }
+    .page-hero-title {
+      font-size: clamp(1.8rem, 8vw, 3rem);
+    }
+  }
 </style>

@@ -149,4 +149,20 @@ import { teams } from '../data/teams.js';
     flex-wrap: wrap;
     flex-shrink: 0;
   }
+
+  /* ── Responsive ── */
+  @media (max-width: 900px) {
+    .stats-strip { grid-template-columns: repeat(2, 1fr); }
+    .strip-cell:nth-child(2) { border-right: none; }
+    .strip-cell:nth-child(3) { border-bottom: none; }
+    .strip-cell:last-child { border-right: none; }
+    .join-cta { grid-template-columns: 1fr; gap: 28px; }
+  }
+
+  @media (max-width: 640px) {
+    .stats-strip { grid-template-columns: repeat(2, 1fr); }
+    .teams-grid { grid-template-columns: 1fr; }
+    .join-buttons { flex-direction: column; width: 100%; }
+    .join-buttons .btn { text-align: center; justify-content: center; }
+  }
 </style>

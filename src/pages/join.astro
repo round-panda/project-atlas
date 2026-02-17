@@ -538,4 +538,20 @@ const familyBullets = [
     color: var(--navy);
     text-decoration: underline;
   }
+
+  /* ── Responsive ── */
+  @media (max-width: 900px) {
+    .two-col-wide { grid-template-columns: 1fr; gap: 48px; }
+  }
+
+  @media (max-width: 640px) {
+    .tab-bar { flex-direction: column; gap: 8px; }
+    .tab-btn { width: 100%; text-align: center; }
+    .form-row { grid-template-columns: 1fr; gap: 0; }
+    form { padding: 28px 20px; }
+    .family-cards { gap: 16px; }
+    .district-stats { grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-footer { flex-direction: column; align-items: flex-start; gap: 12px; }
+    .benefits { gap: 16px; }
+  }
 </style>

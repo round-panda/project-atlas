@@ -320,4 +320,16 @@ const contactTopics = [
   }
   .form-note { font-size: 0.72rem; color: var(--text-dim); }
   .form-note a { color: var(--navy); text-decoration: underline; }
+
+  /* ── Responsive ── */
+  @media (max-width: 900px) {
+    .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+  }
+
+  @media (max-width: 640px) {
+    .form-card { padding: 28px 20px; }
+    .form-row { grid-template-columns: 1fr; gap: 0; }
+    .form-footer { flex-direction: column; align-items: flex-start; gap: 12px; }
+    .hero-text-block { max-width: 100%; }
+  }
 </style>

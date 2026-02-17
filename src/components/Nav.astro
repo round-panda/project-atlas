@@ -38,6 +38,10 @@ const currentPath = Astro.url.pathname;
           </a>
         </li>
       ))}
+      {/* Mobile-only CTA — hidden on desktop via CSS */}
+      <li class="nav-mobile-cta">
+        <a href={url('/join')}>Join Now</a>
+      </li>
     </ul>
 
     <a href={url('/join')} class="nav-cta">Join Now</a>
