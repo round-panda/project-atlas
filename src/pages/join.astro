@@ -9,17 +9,17 @@ const steps = [
   {
     num: '01',
     title: 'Express Interest',
-    desc: 'Fill out the interest form below or reach out via the Contact page. Let us know which team(s) interest you most.', // REPLACE: actual intake process
+    desc: 'Fill out the interest form below or reach out via the Contact page. Let us know which team(s) interest you most.', 
   },
   {
     num: '02',
     title: 'Attend an Info Session',
-    desc: 'Monthly sessions where you meet team captains, see our work, and ask questions. No commitment required.', // REPLACE: real meeting schedule
+    desc: 'Monthly sessions where you meet team captains, see our work, and ask questions. No commitment required.', 
   },
   {
     num: '03',
     title: 'Join Your Team',
-    desc: 'Get matched based on your interests and schedule. No tryouts — just enthusiasm and willingness to learn.', // REPLACE: application/tryout process
+    desc: 'Get matched based on your interests and schedule. No tryouts — just enthusiasm and willingness to learn.', 
   },
   {
     num: '04',
@@ -49,7 +49,6 @@ const benefits = [
   },
 ];
 
-// REPLACE: real district-at-a-glance numbers
 const districtStats = [
   { value: '[#]', label: 'School Sites',      color: 'var(--navy)' },
   { value: '[#]', label: 'Total Students',    color: 'var(--navy)' },
@@ -57,7 +56,6 @@ const districtStats = [
   { value: '[#]%', label: 'College Acceptance', color: 'var(--crimson)' },
 ];
 
-// REPLACE: real FAQs
 const faqs = [
   {
     q: 'What grades are eligible for Atlas teams?',
@@ -73,7 +71,6 @@ const faqs = [
   },
 ];
 
-// REPLACE: bullet points for the families section
 const familyBullets = [
   'Award-winning engineering and STEM programs across all grade levels.',
   'Student voice in district decisions through Atlas\'s board representation program.',
@@ -97,7 +94,6 @@ const familyBullets = [
   />
 
 
-  <!-- ─── TABS ─────────────────────────────────────────────────── -->
   <section class="section">
     <div class="container">
 
@@ -106,11 +102,9 @@ const familyBullets = [
         <button class="tab-btn" data-tab="parents">For Parents &amp; Families</button>
       </div>
 
-      <!-- ── STUDENTS TAB ── -->
       <div id="tab-students" class="tab-panel active">
         <div class="two-col-wide">
 
-          <!-- Steps -->
           <div>
             <div class="section-label">Student Pathway</div>
             <h2 class="section-title">How to Get Involved</h2>
@@ -119,22 +113,21 @@ const familyBullets = [
               the path from interested student to Atlas member.
             </p>
 
-            <div class="steps">
+            <div class="atlas-steps">
               {steps.map(({ num, title, desc }, i) => (
-                <div class={`step ${i < steps.length - 1 ? 'step-line' : ''}`}>
-                  <div class={`step-num ${i === steps.length - 1 ? 'step-num-final' : ''}`}>
+                <div class={`atlas-step ${i < steps.length - 1 ? 'has-connector' : ''}`}>
+                  <div class={`atlas-step-num ${i === steps.length - 1 ? 'atlas-step-num-final' : ''}`}>
                     {num}
                   </div>
-                  <div class="step-body">
-                    <h4 class="step-title">{title}</h4>
-                    <p class="step-desc">{desc}</p>
+                  <div class="atlas-step-body">
+                    <h4 class="atlas-step-title">{title}</h4>
+                    <p class="atlas-step-desc">{desc}</p>
                   </div>
                 </div>
               ))}
             </div>
           </div>
 
-          <!-- Benefit cards -->
           <div class="benefits">
             {benefits.map(({ title, desc, accentColor, icon }, i) => (
               <div class={`card top-border-${accentColor} reveal-right`} style={`transition-delay:${i * 0.1}s`}>
@@ -150,14 +143,12 @@ const familyBullets = [
         </div>
       </div>
 
-      <!-- ── PARENTS TAB ── -->
       <div id="tab-parents" class="tab-panel">
         <div class="two-col-wide">
 
           <div>
             <div class="section-label green">For Families</div>
             <h2 class="section-title">Why Choose Temple City?</h2>
-            <!-- REPLACE: real district facts -->
             <p class="section-sub" style="margin-bottom:32px;">
               Temple City Unified School District is home to some of Southern
               California's most active STEM programs. Project Atlas is proof that
@@ -171,17 +162,14 @@ const familyBullets = [
                 </li>
               ))}
             </ul>
-            <!-- REPLACE: real enrollment link in src/data/site.js -->
             <a href={site.links.enrollment} target="_blank" class="btn btn-green">
               {site.districtShort} Enrollment Info &rarr;
             </a>
           </div>
 
           <div class="family-cards">
-            <!-- District at a glance -->
             <div class="card top-border-navy">
               <h4 class="card-label">District At a Glance</h4>
-              <!-- REPLACE: real numbers in this page's frontmatter -->
               <div class="district-stats">
                 {districtStats.map(({ value, label, color }) => (
                   <div>
@@ -192,7 +180,6 @@ const familyBullets = [
               </div>
             </div>
 
-            <!-- FAQ -->
             <div class="card">
               <h4 class="card-label">Frequently Asked</h4>
               <div class="faq-list">
@@ -214,8 +201,6 @@ const familyBullets = [
 
   <div class="divider"></div>
 
-
-  <!-- ─── INTEREST FORM ─────────────────────────────────────────── -->
   <section class="section" style="background:var(--bg-2);">
     <div class="container">
       <div class="form-wrap">
@@ -229,11 +214,6 @@ const familyBullets = [
           </p>
         </div>
 
-        <!--
-          To enable real email delivery, set site.formAction in src/data/site.js
-          to your Formspree endpoint (e.g. 'https://formspree.io/f/YOUR_ID')
-          or add the netlify attribute if deploying to Netlify.
-        -->
         <form
           id="interest-form"
           class="reveal"
@@ -351,58 +331,88 @@ const familyBullets = [
   }
 
   /* ── Steps ── */
-  .steps { display: flex; flex-direction: column; }
-
-  .step {
-    display: flex;
-    gap: 20px;
-    position: relative;
-    padding-bottom: 32px;
+  .atlas-steps { 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: flex-start; 
+    align-items: flex-start;
+    gap: 0; 
   }
 
-  .step-line::before {
+  .atlas-step {
+    display: flex;
+    align-items: flex-start; 
+    gap: 24px; 
+    position: relative;
+    padding-bottom: 28px; /* REDUCED from 56px to tighten the gap between steps */
+    width: 100%;
+  }
+
+  /* The Line */
+  .has-connector::before {
     content: '';
     position: absolute;
-    left: 19px;
-    top: 42px;
-    bottom: 0;
-    width: 1px;
+    left: 18px; 
+    top: 44px; /* STARTS with a 6px gap below the circle (38px height + 6px gap) */
+    bottom: 6px; /* ENDS 6px before the next circle starts to prevent X-ray overlap */
+    width: 2px;
     background: var(--border-med);
+    z-index: 0;
   }
 
-  .step-num {
+  .atlas-step-num {
     font-family: var(--font-display);
     font-size: 0.65rem;
     font-weight: 700;
     letter-spacing: 0.1em;
     width: 38px;
     height: 38px;
+    box-sizing: border-box; /* Crucial: stops the border from mutating the width */
     border-radius: 50%;
     border: 1.5px solid var(--border-med);
     color: var(--text-muted);
+    background: var(--bg-1); 
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+    position: relative;
+    z-index: 1;
   }
-  .step-num-final {
+
+  .atlas-step-num-final {
     background: var(--navy);
     color: #fff;
     border-color: var(--navy);
   }
 
-  .step-body { padding-top: 10px; }
-  .step-title {
-    font-family: var(--font-display);
-    font-size: 0.84rem;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    margin-bottom: 7px;
+  .atlas-step-body { 
+    padding-top: 6px; 
   }
-  .step-desc { color: var(--text-muted); font-size: 0.88rem; line-height: 1.7; }
+
+  .atlas-step-title {
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    margin-bottom: 6px;
+    color: var(--ink);
+  }
+
+  .atlas-step-desc { 
+    color: var(--text-muted); 
+    font-size: 0.88rem; 
+    line-height: 1.6; 
+    max-width: 400px; 
+  }
 
   /* ── Benefits ── */
-  .benefits { display: flex; flex-direction: column; gap: 18px; }
+  .benefits { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 20px; 
+    align-self: flex-start; 
+  }
   .benefit-title {
     font-family: var(--font-display);
     font-size: 0.84rem;
