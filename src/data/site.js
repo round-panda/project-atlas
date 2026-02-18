@@ -9,7 +9,7 @@ export const site = {
   description:
     'Six engineering teams. One coalition. Advancing student engagement in TCUSD STEM and entrepreneurship.',
   district: 'Temple City Unified School District',
-  districtShort: 'TCUSD',
+  districtShort: 'TCUSD', // sometimes this is not used. monitor for changes.
   location: 'Temple City, California',
 
   // Year Atlas was founded — appears on teams page and about section
@@ -21,8 +21,8 @@ export const site = {
   // Nav + footer links to external TCUSD resources
   links: {
     tcusdWebsite: 'https://www.tcusd.net/',
-    enrollment: '#',     // REPLACE: actual enrollment link
-    calendars: '#',      // REPLACE: actual calendars link
+    enrollment: 'https://templecityusd.aeries.net/enrollment/',
+    calendars: 'https://www.tcusd.net/63418', // May change. Idk why it's just numbers
     news: '#',           // REPLACE: news/updates link
   },
 
