@@ -5,8 +5,6 @@ import CtaBanner from '../components/CtaBanner.astro';
 import { site } from '../data/site.js';
 import { url } from '../utils/url.js';
 
-// ─── EDIT YOUR CONTENT HERE ───────────────────────────────────────────────────
-
 const mission =
   'United under a single voice, we champion STEM entrepreneurship across Temple City Unified School District — rallying students of all backgrounds through the festivities, fierce competition, and a shared drive to innovate. As ambassadors of Temple City High School, we ignite curiosity, forge lasting camaraderie, and open doors to a future built on bold ideas.';
 
@@ -18,45 +16,42 @@ const values = [
     title: 'Unity',
     icon: `<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>`,
     iconColor: 'default',
-    description: 'Six distinct teams, one shared purpose. Collective advocacy is exponentially more powerful than individual effort.',
+    description: 'Academic competition teams united under a single voice, because collective momentum drives greater impact than any one team alone.',
   },
   {
     title: 'Excellence',
     icon: `<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>`,
     iconColor: 'crimson',
-    description: 'We hold ourselves to the same standards we apply to our engineering projects — rigorous, iterative, always improving.',
+    description: 'High-stakes competition demands nothing less than the best — we build that standard in.',
   },
   {
-    title: 'Advocacy',
+    title: 'Entrepreneurship',
     icon: `<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>`,
     iconColor: 'green',
-    description: 'Students deserve a voice in decisions that shape their education. We show up, speak up, and follow through.',
-  },
+    description: 'From bold ideas to built ventures, we treat TCHS as a living startup campus where students tackle real-world challenges from the ground up.',  },
   {
     title: 'Inclusion',
     icon: `<circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>`,
     iconColor: 'default',
-    description: 'Atlas opens its doors to every student regardless of experience. Engineering is a mindset, not a prerequisite.',
+    description: 'We rally students of all backgrounds and experience levels, because innovation thrives when every perspective has a seat at the table.',
   },
   {
     title: 'Innovation',
     icon: `<polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>`,
     iconColor: 'crimson',
-    description: 'We prototype for tomorrow — in our competitions, our advocacy, and our community outreach.',
+    description: 'We push the boundaries of STEM and business, building at their intersection to establish TCUSD beyond the fold.',
   },
   {
     title: 'Community',
     icon: `<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>`,
     iconColor: 'green',
-    description: 'Proud ambassadors of Temple City — attracting families who value STEM and building bonds that outlive high school.',
+    description: 'As proud ambassadors of Temple City High School, we ignite curiosity, forge lasting camaraderie, and open doors to a future built on bold ideas.',
   },
 ];
 
-// REPLACE: write the real founding story in paragraphs below
 const story = [
-  `In 2026, students from across Temple City's engineering programs recognized a common challenge: [NEED TO FILL IN]. The solution was Atlas — a unified body that preserves each team's identity while giving them collective leverage.`,
-  `Despite being named after the Titan who held up the world, ATLAS is also an acronym for (A)cademic Competition (T)eams: (L)and, (A)ir, (S)pace. Project Atlas carries the weight of student ambition — turning competition season trophies into real-world change for the ${site.districtShort} community.`,
-  `[Continue founding story here. Mention key founders, the first meeting, early challenges, vision.]`,
+  `In 2026, students from across Temple City's STEM and business programs recognized a common challenge: a landscape of talented, driven teams — each competing fiercely in their own lane — with no unified voice to amplify their impact or shared infrastructure to turn their wins into something larger. Brilliant ideas stalled at the finish line. The solution was Atlas — a unified body that preserves each team's identity while giving them the collective momentum, camaraderie, and entrepreneurial foundation to build something bold together.`,
+  `Named after the Titan who held up the world, ATLAS is an acronym for (A)cademic Competition (T)eams: (L)and, (A)ir, (S)pace. Project Atlas carries the weight of student ambition — turning competition season trophies into real-world change for the ${site.districtShort} community.`,
 ];
 
 // ─────────────────────────────────────────────────────────────────────────────
