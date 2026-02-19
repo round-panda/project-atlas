@@ -3,8 +3,6 @@ import Layout from '../layouts/Layout.astro';
 import PageHero from '../components/PageHero.astro';
 import { site } from '../data/site.js';
 
-// ─── EDIT YOUR CONTENT HERE ───────────────────────────────────────────────────
-
 const steps = [
   {
     num: '01',
@@ -50,24 +48,23 @@ const benefits = [
 ];
 
 const districtStats = [
-  { value: '[#]', label: 'School Sites',      color: 'var(--navy)' },
-  { value: '[#]', label: 'Total Students',    color: 'var(--navy)' },
-  { value: '[#]', label: 'Years Established', color: 'var(--green)' },
-  { value: '[#]%', label: 'College Acceptance', color: 'var(--crimson)' },
+  { value: '8', label: 'School Sites',      color: 'var(--navy)' },
+  { value: '5246', label: 'Total Students',    color: 'var(--navy)' },
+  { value: '70+', label: 'Years Established', color: 'var(--green)' },
+  { value: '99.6%', label: 'Graduation Rate', color: 'var(--crimson)' },
 ];
-
 const faqs = [
   {
     q: 'What grades are eligible for Atlas teams?',
-    a: 'Replace with your actual eligibility information.',
+    a: 'Grades are not accounted for.  The tryout process is led by students; we don't have access to your grades.',
   },
   {
     q: 'Is there a cost to participate?',
-    a: 'Replace with your actual fee / cost information.',
+    a: 'Costs vary by team and are usually for the team shirt or personal travel. Consult us or the team for estimates.',
   },
   {
     q: 'How do I enroll in TCUSD?',
-    a: 'Replace with enrollment process and link to district site.',
+    a: 'See the <a href="${https://www.tcusd.net/enroll}">TCUSD website</a> for more info.',
   },
 ];
 
