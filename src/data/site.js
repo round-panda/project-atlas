@@ -21,9 +21,9 @@ export const site = {
   // Nav + footer links to external TCUSD resources
   links: {
     tcusdWebsite: 'https://www.tcusd.net/',
-    enrollment: 'https://templecityusd.aeries.net/enrollment/',
+    enrollment: 'https://www.tcusd.net/enroll/',
     calendars: 'https://www.tcusd.net/63418', // May change. Idk why it's just numbers
-    news: '#',           // REPLACE: news/updates link
+    news: '#',           // REPLACE: news/updates link. Not in use currently
   },
 
   // Social media — set to null to hide a link entirely
