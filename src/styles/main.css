@@ -331,17 +331,17 @@ body::before {
 }
 .badge-navy {
   background: rgba(27,42,74,0.08);
-  border: 1px solid rgba(27,42,74,0.14);
+  border: 1px solid rgba(27,42,74,1);
   color: var(--navy);
 }
 .badge-crimson {
   background: rgba(160,24,48,0.07);
-  border: 1px solid rgba(160,24,48,0.14);
+  border: 1px solid rgba(160,24,48,1);
   color: var(--crimson);
 }
 .badge-green {
   background: rgba(45,90,69,0.07);
-  border: 1px solid rgba(45,90,69,0.14);
+  border: 1px solid rgba(45,90,69,1);
   color: var(--green);
 }
 .badge-dot { width: 5px; height: 5px; border-radius: 50%; background: currentColor; }
