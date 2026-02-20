@@ -546,6 +546,33 @@ const typewriterPhrases = [
   }
 
   @media (max-width: 640px) {
+    /* ── Stats Mobile Redesign ── */
+    .stats-grid {
+      grid-template-columns: 1fr;
+      border: none;
+      box-shadow: none;
+      gap: 16px;
+      background: transparent;
+    }
+  
+    .stat-cell {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: var(--bg-card);
+      padding: 28px 20px;
+      border-right: none !important;
+      border-bottom: none !important;
+    }
+  
+    .stat-value {
+      font-size: 2.6rem;
+    }
+  
+    .stat-label {
+      margin-top: 6px;
+      font-size: 0.6rem;
+      letter-spacing: 0.18em;
+    }
     .hero {
       min-height: calc(100svh - 0px);
       align-items: flex-start;
@@ -559,9 +586,6 @@ const typewriterPhrases = [
     .hero-headline { font-size: clamp(1.75rem, 9.7vw, 3.2rem); margin-top: 20px; margin-bottom: 30px; }
     .hero-sub { font-size: 1rem; }
     .hero-scroll-cue { display: none; }
-    .stats-grid { grid-template-columns: repeat(2, 1fr); }
-    .stat-cell { padding: 24px 16px; }
-    .stat-value { font-size: 2.2rem; }
     .teams-preview-grid { grid-template-columns: 1fr; }
     .teams-preview-cell { border-right: none !important; border-bottom: 1px solid var(--border) !important; }
     .teams-preview-cell:last-child { border-bottom: none !important; }
