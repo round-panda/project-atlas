@@ -64,7 +64,7 @@ const faqs = [
   },
   {
     q: 'How do I enroll in TCUSD?',
-    a: 'See the <a href=${site.links.enrollment}>TCUSD website</a> for more info.',
+    a: `<a href="${site.links.enrollment}">See the TCUSD website for more info.</a>`,
   },
 ];
 
@@ -182,7 +182,7 @@ const familyBullets = [
                 {faqs.map(({ q, a }, i) => (
                   <div class={i > 0 ? 'faq-item' : ''}>
                     <p class="faq-q">{q}</p>
-                    <p class="faq-a">{a}</p>
+                    <p class="faq-a" set:html={a}/>
                   </div>
                 ))}
               </div>

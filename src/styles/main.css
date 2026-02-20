@@ -8,6 +8,7 @@
   --navy:         #1B2A4A;
   --navy-dark:    #111D33;
   --green:        #2D5A45;
+  --green-light:  #48916f;
   --crimson:      #A01830;
   --ink:          #1C1C1C;
   --silver:       #C0C4CC;
@@ -342,7 +343,7 @@ body::before {
 .badge-green {
   background: rgba(45,90,69,0.07);
   border: 1px solid rgba(45,90,69,1);
-  color: var(--green);
+  color: var(--green-light);
 }
 .badge-dot { width: 5px; height: 5px; border-radius: 50%; background: currentColor; }
 
